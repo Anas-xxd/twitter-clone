@@ -1,9 +1,19 @@
+import {
+  Menu,
+  Heart,
+  Repeat2,
+  House,
+  Search,
+  Bell,
+  MessageCircle,
+} from "lucide-react";
+
 export default function App() {
   return (
     <>
       <header>
         <button className="menu-btn">
-          <svg className="icon"></svg>
+          <Menu />
         </button>
 
         <div className="logo-container">
@@ -29,7 +39,7 @@ export default function App() {
 
         <div className="text-area">
           <textarea placeholder="What's happening?"></textarea>
-          <button>Post</button>
+          <button type="submit">Post</button>
         </div>
       </form>
 
@@ -44,15 +54,15 @@ export default function App() {
 
             <div className="post-interactions">
               <button className="interaction-btn" aria-label="Like">
-                <svg className="icon"></svg>
+                <Heart />
               </button>
 
               <button className="interaction-btn" aria-label="Reply">
-                <svg className="icon"></svg>
+                <MessageCircle />
               </button>
 
               <button className="interaction-btn" aria-label="Repost">
-                <svg className="icon"></svg>
+                <Repeat2 />
               </button>
             </div>
           </div>
@@ -67,15 +77,15 @@ export default function App() {
             aria-label="Home-page-button"
             aria-current="page"
           >
-            <svg className="icon"></svg>
+            <House />
           </a>
 
           <a href="" className="nav-btn" aria-label="Search-page-button">
-            <svg className="icon"></svg>
+            <Search />
           </a>
 
           <a href="" className="nav-btn" aria-label="notification-page-button">
-            <svg className="icon"></svg>
+            <Bell />
           </a>
 
           <a
@@ -83,7 +93,7 @@ export default function App() {
             className="nav-btn"
             aria-label="direct-message-page-button"
           >
-            <svg className="icon"></svg>
+            <MessageCircle />
           </a>
         </nav>
       </footer>
