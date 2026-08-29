@@ -1,5 +1,5 @@
-import logo from "./assets/logo.svg";
-import avatar from "./assets/avatar.svg";
+import logo from "../assets/logo.svg";
+import avatar from "../assets/avatar.svg";
 import { Menu } from "lucide-react";
 
 export default function Header() {

@@ -1,5 +1,5 @@
-import avatar from "./assets/avatar.svg";
-import postImg from "./assets/content-placeholder.png";
+import avatar from "../assets/avatar.svg";
+import postImg from "../assets/content-placeholder.png";
 import { Heart, MessageCircle, Repeat2 } from "lucide-react";
 
 export default function Post() {
@@ -12,9 +12,9 @@ export default function Post() {
           Username <span>@user . Aug 26</span>
         </p>
 
-        <img className="img-post" src={postImg} alt="Image Post" />
-
         <p className="content"> Today I am so lazy</p>
+
+        <img className="img-post" src={postImg} alt="Image Post" />
 
         <div className="post-interactions">
           <button className="btn interaction-btn" aria-label="Reply">
