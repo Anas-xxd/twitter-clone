@@ -1,4 +1,4 @@
-import avatar from "./assets/avatar.svg";
+import avatar from "../assets/avatar.svg";
 
 export default function PostSection() {
   return (
@@ -10,7 +10,7 @@ export default function PostSection() {
           className="text-area"
           placeholder="What's happening?"
         ></textarea>
-        <button className="text-area" type="submit">
+        <button className="post-btn" type="submit">
           Post
         </button>
       </div>

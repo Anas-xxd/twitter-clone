@@ -1,6 +1,6 @@
 export default function FeedTypeTab() {
   return (
-    <div className="feed-type-btn" role="tablist">
+    <div className="feed-type-tablist" role="tablist">
       <button className="btn tab-btn" role="tab" aria-selected="true">
         For you
       </button>
