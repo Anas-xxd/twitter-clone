@@ -1,18 +1,20 @@
+import logo from "./assets/logo.svg";
+import avatar from "./assets/avatar.svg";
 import { Menu } from "lucide-react";
 
 export default function Header() {
   return (
     <header>
-      <button className="menu-btn">
+      <button className="btn menu-btn">
         <Menu />
       </button>
 
       <div className="logo-container">
-        <svg id="logo"></svg>
+        <img src={logo} id="logo" alt="Logo" />
       </div>
 
-      <button className="account-btn">
-        <img className="avatar" src="" alt="" />
+      <button className="btn account-btn">
+        <img className="avatar" src={avatar} alt="Avatar" />
       </button>
     </header>
   );
