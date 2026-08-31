@@ -1,12 +1,12 @@
-import FeedTypeTab from "./FeedTypeTab";
-import PostSection from "./PostSection";
+import FeedTypeTab from "./FeedTypeTabs";
+import PostingSection from "./PostingSection";
 import FeedSection from "./FeedSection";
 
 export default function Main() {
   return (
     <main>
       <FeedTypeTab />
-      <PostSection />
+      <PostingSection />
       <FeedSection />
     </main>
   );

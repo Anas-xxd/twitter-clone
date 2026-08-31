@@ -46,9 +46,28 @@ header {
   color: white;
 }
 
+.menu-btn {
+  padding: 10px 12px;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+}
+
+.menu-btn:hover {
+  background-color: rgba(250, 250, 250, 0.1);
+}
+
+.avatar-container {
+  display: flexbox;
+}
+
 .avatar {
-  width: 50px;
+  width: 40px;
   align-self: flex-start;
+  transition: filter 0.2s ease;
+}
+
+.avatar:hover {
+  filter: brightness(70%);
 }
 
 .logo-container {
@@ -71,7 +90,25 @@ main {
 }
 
 .tab-btn {
-  padding: 10px;
+  flex: 1;
+  transition: background-color 0.2s ease;
+  color: #71767b;
+  display: flex;
+  justify-content: center;
+}
+
+.tab-btn:hover {
+  background-color: rgba(250, 250, 250, 0.1);
+}
+
+.tab-text-container {
+  padding: 10px 0;
+}
+
+.active-tab {
+  font-weight: bold;
+  color: white;
+  border-bottom: 2px solid #1d9bf0;
 }
 
 .post-section {
@@ -117,14 +154,29 @@ main {
   margin-top: 10px;
 }
 
+.active {
+  background-color: white;
+  cursor: pointer;
+}
+
 footer {
-  padding: 20px;
+  padding: 10px;
   border-top: 1px solid gray;
 }
 
 .main-nav {
   display: flex;
   justify-content: space-around;
+}
+
+.nav-btn {
+  border-radius: 50%;
+  padding: 10px;
+  transition: background-color 0.2s ease;
+}
+
+.nav-btn:hover {
+  background-color: rgba(250, 250, 250, 0.1);
 }
 
 .feed-section {
@@ -157,4 +209,16 @@ span {
   display: flex;
   margin-top: 10px;
   gap: 80px;
+}
+
+.like:hover {
+  color: #f91880;
+}
+
+.reply:hover {
+  color: #1d9bf0;
+}
+
+.repost:hover {
+  color: #00ab7c;
 }

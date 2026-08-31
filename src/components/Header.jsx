@@ -13,9 +13,9 @@ export default function Header() {
         <img src={logo} id="logo" alt="Logo" />
       </div>
 
-      <button className="btn account-btn">
+      <a href="" className="btn account-btn">
         <img className="avatar" src={avatar} alt="Avatar" />
-      </button>
+      </a>
     </header>
   );
 }
