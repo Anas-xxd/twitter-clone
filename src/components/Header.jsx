@@ -3,9 +3,14 @@ import avatar from "../assets/avatar.svg";
 import { Menu } from "lucide-react";
 
 export default function Header() {
+  function showNavBar() {
+    document.querySelector(".nav-bar").classList.toggle("invisible")
+    document.querySelector(".gray-background").classList.toggle("invisible")
+  }
+
   return (
     <header>
-      <button className="btn menu-btn">
+      <button className="btn menu-btn" onClick={showNavBar}>
         <Menu />
       </button>
 

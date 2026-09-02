@@ -222,3 +222,23 @@ span {
 .repost:hover {
   color: #00ab7c;
 }
+
+.nav-bar {
+  background-color: black;
+  width: 70%;
+  min-height: 100vh;
+  position: absolute;
+  z-index: 3;
+}
+
+.gray-background {
+  background-color: rgba(250, 250, 250, 0.1);
+  width: 100%;
+  min-height: 100vh;
+  position: absolute;
+  z-index: 2;
+}
+
+.invisible {
+  display: none;
+}
