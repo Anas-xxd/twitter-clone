@@ -3,7 +3,7 @@ import postImg from "../assets/content-placeholder.png";
 import { Heart, MessageCircle, Repeat2 } from "lucide-react";
 import { useState } from "react";
 
-export default function Post() {
+export default function Post({ text, date }) {
   const [liked, isLiked] = useState(false);
   const [reposted, isReposted] = useState(false);
 
@@ -29,10 +29,10 @@ export default function Post() {
 
       <div className="post-content">
         <p className="user-info">
-          Username <span>@user . Aug 26</span>
+          Username <span>@user . {date}</span>
         </p>
 
-        <p className="content"> Today I am so lazy</p>
+        <p className="content">{text}</p>
 
         <img className="img-post" src={postImg} alt="Image Post" />
 

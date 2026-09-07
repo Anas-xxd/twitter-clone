@@ -1,10 +1,24 @@
 import { useState } from "react";
 import avatar from "../assets/avatar.svg";
 
-export default function PostSection() {
+export default function PostingSection({ setPosts }) {
   const [postText, setPostText] = useState("");
+
+  function handleSubmetting(e) {
+    e.preventDefault();
+    setPosts((prevPosts) => [
+      {
+        id: Date.now(),
+        text: postText,
+        date: new Date().toLocaleDateString(),
+      },
+      ...prevPosts,
+    ]);
+    setPostText("");
+  }
+
   return (
-    <form className="post-section">
+    <form className="post-section" onSubmit={handleSubmetting}>
       <div className="avatar-container">
         <a href="" className="btn account-btn">
           <img className="avatar" src={avatar} alt="Avatar" />
