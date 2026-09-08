@@ -54,7 +54,7 @@ header {
 
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 10;
 }
 
 .header-container {
@@ -192,7 +192,7 @@ footer {
 
   position: sticky;
   bottom: 0;
-  z-index: 1000;
+  z-index: 10;
 
   background-color: black;
 }
@@ -259,18 +259,18 @@ span {
   color: #00ab7c;
 }
 
-.nav-bar {
+.side-bar {
   background-color: black;
   width: 70%;
   min-height: 100vh;
   position: absolute;
-  z-index: 3;
+  z-index: 1000;
   text-align: left;
   display: flex;
   flex-direction: column;
 }
 
-.nav-bar > .user-info {
+.side-bar > .user-info {
   padding: 20px;
 }
 
@@ -349,7 +349,7 @@ span {
   width: 100%;
   min-height: 100vh;
   position: absolute;
-  z-index: 2;
+  z-index: 100;
 }
 
 .invisible {
