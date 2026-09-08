@@ -8,16 +8,16 @@ import {
   LogOut,
 } from "lucide-react";
 
-export default function NavBar() {
-  function showNavBar() {
-    document.querySelector(".nav-bar").classList.toggle("invisible")
-    document.querySelector(".gray-background").classList.toggle("invisible")
-  }
-
+export default function SideBar({ showSideBar, setShowSideBar }) {
   return (
     <>
-      <div className="gray-background invisible" onClick={showNavBar}></div>
-      <div className="nav-bar invisible">
+      <div
+        className={
+          showSideBar ? "gray-background" : "gray-background invisible"
+        }
+        onClick={() => setShowSideBar(false)}
+      ></div>
+      <div className={showSideBar ? "side-bar" : "side-bar invisible"}>
         <div className="user-info">
           <a href="" className="btn account-btn">
             <img className="avatar" src={avatar} alt="Avatar" />
