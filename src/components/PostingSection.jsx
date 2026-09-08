@@ -6,6 +6,9 @@ export default function PostingSection({ setPosts }) {
 
   function handleSubmetting(e) {
     e.preventDefault();
+    if (!postText.trim()) {
+      return;
+    }
     setPosts((prevPosts) => [
       {
         id: Date.now(),
@@ -33,7 +36,7 @@ export default function PostingSection({ setPosts }) {
           onChange={(e) => setPostText(e.target.value)}
         ></textarea>
         <button
-          className={postText ? "post-btn active" : "post-btn"}
+          className={postText.trim() ? "post-btn active" : "post-btn"}
           type="submit"
         >
           Post
