@@ -1,7 +1,7 @@
 import logo from "../assets/logo.svg";
 import avatar from "../assets/avatar.svg";
 import FeedTypeTab from "./FeedTypeTabs";
-import { useHeaderVisibility } from "./useHeaderVisibility.js";
+import { useHeaderVisibility } from "../hooks/useHeaderVisibility";
 import { Menu } from "lucide-react";
 
 export default function Header() {
