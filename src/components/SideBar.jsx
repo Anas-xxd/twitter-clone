@@ -12,12 +12,13 @@ export default function SideBar({ showSideBar, setShowSideBar }) {
   return (
     <>
       <div
-        className={
-          showSideBar ? "gray-background" : "gray-background invisible"
-        }
+        className={`gray-background 
+          ${showSideBar ? "side-bar-visible" : "side-bar-invisible"}`}
         onClick={() => setShowSideBar(false)}
       ></div>
-      <div className={showSideBar ? "side-bar" : "side-bar invisible"}>
+      <div
+        className={`side-bar ${showSideBar ? "side-bar-visible" : " side-bar-invisible"}`}
+      >
         <div className="user-info">
           <a href="" className="btn account-btn">
             <img className="avatar" src={avatar} alt="Avatar" />
