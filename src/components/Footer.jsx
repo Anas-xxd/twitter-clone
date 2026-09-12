@@ -1,8 +1,11 @@
 import { House, Search, Bell, MessageCircle } from "lucide-react";
+import { useVisibility } from "../hooks/useVisibility";
 
 export default function Footer() {
+  const isVisible = useVisibility(20);
+
   return (
-    <footer>
+    <footer className={isVisible ? "" : "footer-hidden"}>
       <nav className="main-nav" aria-label="Primary">
         <a
           href=""
