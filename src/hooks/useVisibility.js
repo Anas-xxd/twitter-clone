@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export function useHeaderVisibility(threshold = 20) {
+export function useVisibility(threshold = 20) {
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {

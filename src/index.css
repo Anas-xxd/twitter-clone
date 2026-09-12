@@ -63,12 +63,30 @@ header {
   transition: transform 0.3s ease-in-out;
 }
 
-.visible {
+.header-visible {
   transform: translateY(0);
 }
 
-.hidden {
+.header-hidden {
   transform: translateY(-100%);
+}
+
+.footer-hidden {
+  opacity: 20%;
+}
+
+footer {
+  padding: 10px;
+  border-top: 1px solid gray;
+
+  position: sticky;
+  bottom: 0;
+  z-index: 1000;
+
+  background-color: black;
+
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .header-container {
@@ -198,17 +216,6 @@ main {
 .active {
   background-color: white;
   cursor: pointer;
-}
-
-footer {
-  padding: 10px;
-  border-top: 1px solid gray;
-
-  position: sticky;
-  bottom: 0;
-  z-index: 1000;
-
-  background-color: black;
 }
 
 .main-nav {

@@ -1,11 +1,11 @@
 import logo from "../assets/logo.svg";
 import avatar from "../assets/avatar.svg";
 import FeedTypeTab from "./FeedTypeTabs";
-import { useHeaderVisibility } from "../hooks/useHeaderVisibility";
+import { useVisibility } from "../hooks/useVisibility";
 import { Menu } from "lucide-react";
 
 export default function Header() {
-  const isHeaderVisible = useHeaderVisibility(20);
+  const isVisible = useVisibility(20);
 
   function showNavBar() {
     document.querySelector(".nav-bar").classList.toggle("invisible");
@@ -13,7 +13,7 @@ export default function Header() {
   }
 
   return (
-    <header className={isHeaderVisible ? "visible" : "hidden"}>
+    <header className={isVisible ? "header-visible" : "header-hidden"}>
       <div className="header-container">
         <button className="btn menu-btn" onClick={showNavBar}>
           <Menu />
