@@ -8,13 +8,13 @@ import {
   LogOut,
 } from "lucide-react";
 
-export default function SideBar({ showSideBar, setShowSideBar }) {
+export default function SideBar({ showSideBar, toggleSidebar }) {
   return (
     <>
       <div
         className={`gray-background 
           ${showSideBar ? "side-bar-visible" : "side-bar-invisible"}`}
-        onClick={() => setShowSideBar(false)}
+        onClick={toggleSidebar}
       ></div>
       <div
         className={`side-bar ${showSideBar ? "side-bar-visible" : " side-bar-invisible"}`}

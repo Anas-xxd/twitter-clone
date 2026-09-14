@@ -41,10 +41,15 @@ body {
   color: white;
 }
 
+body.no-scroll {
+  overflow: hidden;
+}
+
 #root {
   display: flex;
   flex-direction: column;
   text-align: center;
+  padding-top: 110px;
 }
 
 header {
@@ -52,9 +57,40 @@ header {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
   z-index: 10;
+
+  transition: transform 0.3s ease-in-out;
+}
+
+.header-visible {
+  transform: translateY(0);
+}
+
+.header-hidden {
+  transform: translateY(-100%);
+}
+
+.footer-hidden {
+  opacity: 20%;
+}
+
+footer {
+  padding: 10px;
+  border-top: 1px solid gray;
+
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+
+  background-color: black;
+
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .header-container {
@@ -186,17 +222,6 @@ main {
   cursor: pointer;
 }
 
-footer {
-  padding: 10px;
-  border-top: 1px solid gray;
-
-  position: sticky;
-  bottom: 0;
-  z-index: 10;
-
-  background-color: black;
-}
-
 .main-nav {
   display: flex;
   justify-content: space-around;
@@ -263,11 +288,14 @@ span {
   background-color: black;
   width: 70%;
   min-height: 100vh;
-  position: absolute;
+  position: fixed;
+  top: 0;
+  left: 0;
   z-index: 1000;
   text-align: left;
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
 
   transition: transform 0.2s ease-in-out;
 }
@@ -356,9 +384,11 @@ span {
 
 .gray-background {
   background-color: rgba(250, 250, 250, 0.1);
-  width: 100%;
+  width: 100vw;
   min-height: 100vh;
-  position: absolute;
+  position: fixed;
+  top: 0;
+  left: 0;
   z-index: 100;
 }
 

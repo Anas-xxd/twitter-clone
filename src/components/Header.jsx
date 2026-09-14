@@ -1,13 +1,16 @@
 import logo from "../assets/logo.svg";
 import avatar from "../assets/avatar.svg";
 import FeedTypeTab from "./FeedTypeTabs";
+import { useVisibility } from "../hooks/useVisibility";
 import { Menu } from "lucide-react";
 
-export default function Header({ setShowSideBar }) {
+export default function Header({ toggleSidebar }) {
+  const isVisible = useVisibility(20);
+
   return (
-    <header>
+    <header className={isVisible ? "header-visible" : "header-hidden"}>
       <div className="header-container">
-        <button className="btn menu-btn" onClick={() => setShowSideBar(true)}>
+        <button className="btn menu-btn" onClick={toggleSidebar}>
           <Menu />
         </button>
 
