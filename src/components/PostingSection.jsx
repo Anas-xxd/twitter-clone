@@ -1,5 +1,5 @@
 import { useState } from "react";
-import avatar from "../assets/avatar.svg";
+import avatar from "/avatar.svg";
 
 export default function PostingSection({ setPosts }) {
   const [postText, setPostText] = useState("");

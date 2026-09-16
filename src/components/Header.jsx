@@ -1,5 +1,5 @@
 import logo from "../assets/logo.svg";
-import avatar from "../assets/avatar.svg";
+import avatar from "/avatar.svg";
 import FeedTypeTab from "./FeedTypeTabs";
 import { useVisibility } from "../hooks/useVisibility";
 import { Menu } from "lucide-react";
