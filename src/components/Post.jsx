@@ -1,11 +1,15 @@
-import avatar from "../assets/avatar.svg";
-import postImg from "../assets/content-placeholder.png";
 import { Heart, MessageCircle, Repeat2 } from "lucide-react";
 import { useState } from "react";
 
-export default function Post({ text, date }) {
+export default function Post({ postData }) {
   const [liked, isLiked] = useState(false);
   const [reposted, isReposted] = useState(false);
+
+  const { userInfo, postInfo } = postData;
+  const { userId, name, username, avatar } = userInfo;
+  const { postId, content, img, createdAt, postInteractions } = postInfo;
+
+  console.log(postData);
 
   function likeClicked() {
     liked ? isLiked(false) : isLiked(true);
@@ -29,12 +33,15 @@ export default function Post({ text, date }) {
 
       <div className="post-content">
         <p className="user-info">
-          Username <span>@user . {date}</span>
+          {name}{" "}
+          <span>
+            @{username} . {createdAt}
+          </span>
         </p>
 
-        <p className="content">{text}</p>
+        <p className="content">{content}</p>
 
-        <img className="img-post" src={postImg} alt="Image Post" />
+        {img && <img className="img-post" src={img} alt="Image Post" />}
 
         <div className="post-interactions">
           <button
