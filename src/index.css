@@ -272,6 +272,17 @@ span {
   gap: 80px;
 }
 
+.interaction-btn {
+  color: gray;
+  display: flex;
+  align-items: center;
+}
+
+.interaction-count {
+  margin-left: 5px;
+  font-size: 14px;
+}
+
 .like:hover {
   color: #f91880;
 }

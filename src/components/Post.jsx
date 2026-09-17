@@ -3,26 +3,34 @@ import { useState } from "react";
 import { formatPostDate } from "../utils/formatPostDate";
 
 export default function Post({ postData }) {
-  const [liked, isLiked] = useState(false);
-  const [reposted, isReposted] = useState(false);
+  const [liked, setLiked] = useState(false);
+  const [reposted, setReposted] = useState(false);
 
   const { userInfo, postInfo } = postData;
   const { userId, name, username, avatar } = userInfo;
   const { postId, content, img, createdAt, postInteractions } = postInfo;
+  const {
+    likesNum,
+    isLiked,
+    repostNum,
+    isReposted,
+    commentsNum,
+    commentsList,
+  } = postInteractions;
 
-  console.log(postData);
+  const likeClicked = () => {
+    setLiked(!liked);
+    liked ? postInteractions.likesNum-- : postInteractions.likesNum++;
+  };
 
-  function likeClicked() {
-    liked ? isLiked(false) : isLiked(true);
-  }
+  const repostClicked = () => {
+    setReposted(!reposted);
+    reposted ? postInteractions.repostNum-- : postInteractions.repostNum++;
+  };
 
-  function repostClicked() {
-    reposted ? isReposted(false) : isReposted(true);
-  }
-
-  function replyClicked() {
+  const replyClicked = () => {
     console.log("Comments opens");
-  }
+  };
 
   return (
     <article className="post">
@@ -51,6 +59,7 @@ export default function Post({ postData }) {
             onClick={replyClicked}
           >
             <MessageCircle />
+            <span className="interaction-count">{commentsNum}</span>
           </button>
 
           <button
@@ -59,6 +68,7 @@ export default function Post({ postData }) {
             onClick={repostClicked}
           >
             <Repeat2 color={reposted ? "#00ab7c" : "currentColor"} />
+            <span className="interaction-count">{repostNum}</span>
           </button>
 
           <button
@@ -70,6 +80,7 @@ export default function Post({ postData }) {
               color={liked ? "#f91880" : "currentColor"}
               fill={liked ? "#f91880" : "none"}
             />
+            <span className="interaction-count">{likesNum}</span>
           </button>
         </div>
       </div>
