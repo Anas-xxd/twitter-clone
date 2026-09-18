@@ -1,5 +1,5 @@
 import { useState } from "react";
-import avatar from "../assets/avatar.svg";
+import avatar from "/avatar.svg";
 
 export default function PostingSection({ setPosts }) {
   const [postText, setPostText] = useState("");
@@ -11,9 +11,25 @@ export default function PostingSection({ setPosts }) {
     }
     setPosts((prevPosts) => [
       {
-        id: Date.now(),
-        text: postText,
-        date: new Date().toLocaleDateString(),
+        userInfo: {
+          userId: 1,
+          name: "Anas Baroudi",
+          username: "Anas_xxd",
+          avatar: "/avatar.svg",
+        },
+        postInfo: {
+          postId: Date.now(),
+          content: postText,
+          createdAt: new Date().toISOString(),
+          postInteractions: {
+            likesNum: 0,
+            isLiked: false,
+            repostNum: 0,
+            isReposted: false,
+            commentsNum: 0,
+            commentsList: [],
+          },
+        },
       },
       ...prevPosts,
     ]);

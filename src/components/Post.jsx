@@ -1,23 +1,36 @@
-import avatar from "../assets/avatar.svg";
-import postImg from "../assets/content-placeholder.png";
 import { Heart, MessageCircle, Repeat2 } from "lucide-react";
 import { useState } from "react";
+import { formatPostDate } from "../utils/formatPostDate";
 
-export default function Post({ text, date }) {
-  const [liked, isLiked] = useState(false);
-  const [reposted, isReposted] = useState(false);
+export default function Post({ postData }) {
+  const [liked, setLiked] = useState(false);
+  const [reposted, setReposted] = useState(false);
 
-  function likeClicked() {
-    liked ? isLiked(false) : isLiked(true);
-  }
+  const { userInfo, postInfo } = postData;
+  const { userId, name, username, avatar } = userInfo;
+  const { postId, content, img, createdAt, postInteractions } = postInfo;
+  const {
+    likesNum,
+    isLiked,
+    repostNum,
+    isReposted,
+    commentsNum,
+    commentsList,
+  } = postInteractions;
 
-  function repostClicked() {
-    reposted ? isReposted(false) : isReposted(true);
-  }
+  const likeClicked = () => {
+    setLiked(!liked);
+    liked ? postInteractions.likesNum-- : postInteractions.likesNum++;
+  };
 
-  function replyClicked() {
+  const repostClicked = () => {
+    setReposted(!reposted);
+    reposted ? postInteractions.repostNum-- : postInteractions.repostNum++;
+  };
+
+  const replyClicked = () => {
     console.log("Comments opens");
-  }
+  };
 
   return (
     <article className="post">
@@ -29,12 +42,15 @@ export default function Post({ text, date }) {
 
       <div className="post-content">
         <p className="user-info">
-          Username <span>@user . {date}</span>
+          {name}{" "}
+          <span>
+            @{username} . {formatPostDate(createdAt)}
+          </span>
         </p>
 
-        <p className="content">{text}</p>
+        <p className="content">{content}</p>
 
-        <img className="img-post" src={postImg} alt="Image Post" />
+        {img && <img className="img-post" src={img} alt="Image Post" />}
 
         <div className="post-interactions">
           <button
@@ -43,6 +59,7 @@ export default function Post({ text, date }) {
             onClick={replyClicked}
           >
             <MessageCircle />
+            <span className="interaction-count">{commentsNum}</span>
           </button>
 
           <button
@@ -51,6 +68,7 @@ export default function Post({ text, date }) {
             onClick={repostClicked}
           >
             <Repeat2 color={reposted ? "#00ab7c" : "currentColor"} />
+            <span className="interaction-count">{repostNum}</span>
           </button>
 
           <button
@@ -62,6 +80,7 @@ export default function Post({ text, date }) {
               color={liked ? "#f91880" : "currentColor"}
               fill={liked ? "#f91880" : "none"}
             />
+            <span className="interaction-count">{likesNum}</span>
           </button>
         </div>
       </div>
