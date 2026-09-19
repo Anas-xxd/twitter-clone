@@ -1,28 +1,33 @@
+import "./Footer.css";
 import { House, Search, Bell, MessageCircle } from "lucide-react";
-import { useVisibility } from "../hooks/useVisibility";
+import { useVisibility } from "../../hooks/useVisibility";
 
 export default function Footer() {
   const isVisible = useVisibility(20);
 
   return (
-    <footer className={isVisible ? "" : "footer-hidden"}>
-      <nav className="main-nav" aria-label="Primary">
+    <footer className={isVisible ? "" : "hidden"}>
+      <nav className="footer__main-nav" aria-label="Primary">
         <a
           href=""
-          className="btn nav-btn"
+          className="btn main-nav__btn"
           aria-label="Home-page-button"
           aria-current="page"
         >
           <House />
         </a>
 
-        <a href="" className="btn nav-btn" aria-label="Search-page-button">
+        <a
+          href=""
+          className="btn main-nav__btn"
+          aria-label="Search-page-button"
+        >
           <Search />
         </a>
 
         <a
           href=""
-          className="btn nav-btn"
+          className="btn main-nav__btn"
           aria-label="notification-page-button"
         >
           <Bell />
@@ -30,7 +35,7 @@ export default function Footer() {
 
         <a
           href=""
-          className="btn nav-btn"
+          className="btn main-nav__btn"
           aria-label="direct-message-page-button"
         >
           <MessageCircle />

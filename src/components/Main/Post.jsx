@@ -1,6 +1,6 @@
 import { Heart, MessageCircle, Repeat2 } from "lucide-react";
 import { useState } from "react";
-import { formatPostDate } from "../utils/formatPostDate";
+import { formatPostDate } from "../../utils/formatPostDate";
 
 export default function Post({ postData }) {
   const [liked, setLiked] = useState(false);
@@ -42,7 +42,7 @@ export default function Post({ postData }) {
 
       <div className="post-content">
         <p className="user-info">
-          {name}{" "}
+          {name + " "}
           <span>
             @{username} . {formatPostDate(createdAt)}
           </span>

@@ -1,28 +1,28 @@
-import Header from "./components/Header.jsx";
-import Main from "./components/Main.jsx";
-import Footer from "./components/Footer.jsx";
-import SideBar from "./components/SideBar.jsx";
+import Header from "./components/Header/Header.jsx";
+import Main from "./components/Main/Main.jsx";
+import Footer from "./components/Footer/Footer.jsx";
+import Sidebar from "./components/Sidebar/Sidebar.jsx";
 import { useEffect, useState } from "react";
 
 export default function App() {
-  const [showSideBar, setShowSideBar] = useState(false);
+  const [showSidebar, setShowSidebar] = useState(false);
 
-  const toggleSidebar = () => setShowSideBar((prev) => !prev);
+  const toggleSidebar = () => setShowSidebar((prev) => !prev);
 
   useEffect(() => {
-    if (showSideBar) {
+    if (showSidebar) {
       document.body.classList.add("no-scroll");
     } else {
       document.body.classList.remove("no-scroll");
     }
-  }, [showSideBar]);
+  }, [showSidebar]);
 
   return (
     <>
       <Header toggleSidebar={toggleSidebar} />
       <Main />
       <Footer />
-      <SideBar showSideBar={showSideBar} toggleSidebar={toggleSidebar} />
+      <Sidebar showSidebar={showSidebar} toggleSidebar={toggleSidebar} />
     </>
   );
 }

@@ -1,6 +1,7 @@
 import PostingSection from "./PostingSection";
 import FeedSection from "./FeedSection";
-import getPosts from "../data/postService";
+import getPosts from "../../data/postService";
+import "./Main.css";
 import { useState, useEffect } from "react";
 
 export default function Main() {

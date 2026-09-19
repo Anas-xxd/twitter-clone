@@ -1,5 +1,4 @@
 import { useState } from "react";
-import avatar from "/avatar.svg";
 
 export default function PostingSection({ setPosts }) {
   const [postText, setPostText] = useState("");
@@ -40,7 +39,7 @@ export default function PostingSection({ setPosts }) {
     <form className="post-section" onSubmit={handleSubmetting}>
       <div className="avatar-container">
         <a href="" className="btn account-btn">
-          <img className="avatar" src={avatar} alt="Avatar" />
+          <img className="avatar" src="/avatar.svg" alt="Avatar" />
         </a>
       </div>
 
@@ -52,7 +51,7 @@ export default function PostingSection({ setPosts }) {
           onChange={(e) => setPostText(e.target.value)}
         ></textarea>
         <button
-          className={postText.trim() ? "post-btn active" : "post-btn"}
+          className={`post-btn ${postText.trim() ? "active" : ""}`}
           type="submit"
         >
           Post

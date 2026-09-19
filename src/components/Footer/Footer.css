@@ -1,0 +1,32 @@
+footer {
+  padding: 10px;
+  border-top: 1px solid gray;
+  opacity: 1;
+  background-color: black;
+
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+
+  transition: opacity 0.3s ease-in-out;
+
+  &.hidden {
+    opacity: 0.2;
+  }
+}
+
+.footer__main-nav {
+  display: flex;
+  justify-content: space-around;
+
+  .main-nav__btn {
+    border-radius: 50%;
+    padding: 10px;
+
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: rgba(250, 250, 250, 0.1);
+    }
+  }
+}
