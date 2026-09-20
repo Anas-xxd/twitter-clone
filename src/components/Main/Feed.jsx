@@ -1,8 +1,8 @@
 import Post from "./Post";
 
-export default function FeedSection({ posts }) {
+export default function Feed({ posts }) {
   return (
-    <section className="feed-section">
+    <section className="feed">
       {posts.map((post) => (
         <Post postData={post} />
       ))}

@@ -1,6 +1,6 @@
 import { Heart, MessageCircle, Repeat2 } from "lucide-react";
 import { useState } from "react";
-import { formatPostDate } from "../utils/formatPostDate";
+import { formatPostDate } from "../../utils/formatPostDate";
 
 export default function Post({ postData }) {
   const [liked, setLiked] = useState(false);
@@ -40,39 +40,39 @@ export default function Post({ postData }) {
         </a>
       </div>
 
-      <div className="post-content">
-        <p className="user-info">
-          {name}{" "}
-          <span>
+      <div className="post__content">
+        <p className="post__user-info">
+          {name + " "}
+          <span className="post__meta">
             @{username} . {formatPostDate(createdAt)}
           </span>
         </p>
 
-        <p className="content">{content}</p>
+        <p className="post__text">{content}</p>
 
-        {img && <img className="img-post" src={img} alt="Image Post" />}
+        {img && <img className="post__media" src={img} alt="Image Post" />}
 
-        <div className="post-interactions">
+        <div className="post__interactions">
           <button
-            className="btn reply interaction-btn"
+            className="btn post__interaction-btn --reply"
             aria-label="Reply"
             onClick={replyClicked}
           >
             <MessageCircle />
-            <span className="interaction-count">{commentsNum}</span>
+            <span className="post__interaction-count">{commentsNum}</span>
           </button>
 
           <button
-            className="btn repost interaction-btn"
+            className="btn post__interaction-btn --repost"
             aria-label="Repost"
             onClick={repostClicked}
           >
             <Repeat2 color={reposted ? "#00ab7c" : "currentColor"} />
-            <span className="interaction-count">{repostNum}</span>
+            <span className="post__interaction-count">{repostNum}</span>
           </button>
 
           <button
-            className="btn like interaction-btn"
+            className="btn post__interaction-btn --like"
             aria-label="Like"
             onClick={likeClicked}
           >
@@ -80,7 +80,7 @@ export default function Post({ postData }) {
               color={liked ? "#f91880" : "currentColor"}
               fill={liked ? "#f91880" : "none"}
             />
-            <span className="interaction-count">{likesNum}</span>
+            <span className="post__interaction-count">{likesNum}</span>
           </button>
         </div>
       </div>

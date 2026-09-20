@@ -4,36 +4,32 @@ export default function FeedTypeTab() {
   const [activeTab, setActiveTab] = useState("forYou");
 
   return (
-    <div className="feed-type-tablist" role="tablist">
+    <div className="feed-tablist" role="tablist">
       <button
-        className="btn tab-btn"
+        className="btn feed-tablist__btn"
         role="tab"
         aria-selected={activeTab === "forYou"}
         onClick={() => setActiveTab("forYou")}
       >
         <div
-          className={
-            activeTab === "forYou"
-              ? "tab-text-container active-tab"
-              : "tab-text-container"
-          }
+          className={`feed-tablist__label ${
+            activeTab === "forYou" ? "feed-tablist--active" : ""
+          }`}
         >
           For you
         </div>
       </button>
 
       <button
-        className="btn tab-btn"
+        className="btn feed-tablist__btn"
         role="tab"
         aria-selected={activeTab === "following"}
         onClick={() => setActiveTab("following")}
       >
         <div
-          className={
-            activeTab === "following"
-              ? "tab-text-container active-tab"
-              : "tab-text-container"
-          }
+          className={`feed-tablist__label ${
+            activeTab === "following" ? "feed-tablist--active" : ""
+          }`}
         >
           Following
         </div>
