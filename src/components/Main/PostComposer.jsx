@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-export default function PostingSection({ setPosts }) {
+export default function PostComposer({ setPosts }) {
   const [postText, setPostText] = useState("");
 
-  function handleSubmetting(e) {
+  function handleSubmitting(e) {
     e.preventDefault();
     if (!postText.trim()) {
       return;
@@ -36,22 +36,22 @@ export default function PostingSection({ setPosts }) {
   }
 
   return (
-    <form className="post-section" onSubmit={handleSubmetting}>
+    <form className="post-composer" onSubmit={handleSubmitting}>
       <div className="avatar-container">
         <a href="" className="btn account-btn">
           <img className="avatar" src="/avatar.svg" alt="Avatar" />
         </a>
       </div>
 
-      <div className="post-text-area">
+      <div className="post-composer__body">
         <textarea
-          className="text-area"
+          className="post-composer__textarea"
           placeholder="What's happening?"
           value={postText}
           onChange={(e) => setPostText(e.target.value)}
         ></textarea>
         <button
-          className={`post-btn ${postText.trim() ? "active" : ""}`}
+          className={`post-composer__submit-btn ${postText.trim() ? "active" : ""}`}
           type="submit"
         >
           Post
