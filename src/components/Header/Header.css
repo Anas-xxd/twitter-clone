@@ -1,3 +1,4 @@
+/* --------- Header ---------- */
 header {
   background: rgba(0, 0, 0, 0.75);
   backdrop-filter: blur(12px);
@@ -46,6 +47,7 @@ header {
   }
 }
 
+/* --------- Feed Tablist ---------- */
 .feed-tablist {
   border-bottom: 1px solid gray;
 

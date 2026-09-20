@@ -1,3 +1,4 @@
+/* --------- Footer ---------- */
 footer {
   padding: 10px;
   border-top: 1px solid gray;
@@ -15,6 +16,7 @@ footer {
   }
 }
 
+/* --------- Footer Nav ---------- */
 .footer__main-nav {
   display: flex;
   justify-content: space-around;
