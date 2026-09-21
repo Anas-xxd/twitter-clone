@@ -1,6 +1,6 @@
 /* --------- Footer ---------- */
 footer {
-  padding: 10px;
+  padding: 0.625em;
   border-top: 1px solid gray;
   opacity: 1;
   background-color: black;
@@ -23,7 +23,7 @@ footer {
 
   .main-nav__btn {
     border-radius: 50%;
-    padding: 10px;
+    padding: 0.625em;
 
     transition: background-color 0.2s ease;
 
