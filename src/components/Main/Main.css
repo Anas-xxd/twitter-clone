@@ -4,14 +4,14 @@
 
 /* --------- Post Composer ---------- */
 .post-composer {
-  padding: 0.625rem;
+  padding: 0.625em;
   border-bottom: 1px solid gray;
 
   display: flex;
 }
 
 .post-composer__body {
-  padding-left: 0.625rem;
+  padding-left: 0.625em;
 
   display: flex;
   flex-direction: column;
@@ -22,7 +22,7 @@
     border: none;
     background-color: black;
     color: white;
-    padding: 0.625rem;
+    padding: 0.625em;
     font-family: inherit;
     font-size: inherit;
 
@@ -35,11 +35,11 @@
   .post-composer__submit-btn {
     border: none;
     border-radius: 50px;
-    padding: 0.714rem 1.071rem;
+    padding: 0.714em 1.071em;
     background-color: #3e4144;
     font-weight: 600;
-    font-size: 0.875em;
-    margin-top: 0.714rem;
+    font-size: 0.875rem;
+    margin-top: 0.714em;
 
     align-self: flex-end;
 
@@ -52,19 +52,19 @@
 
 /* --------- Feed ---------- */
 .feed {
-  padding: 0 0.625rem;
+  padding: 0 0.625em;
 }
 
 /* --------- Post ---------- */
 .post {
-  margin: 0.625rem 0;
-  padding-bottom: 0.625rem;
+  margin: 0.625em 0;
+  padding-bottom: 0.625em;
   border-bottom: 1px solid gray;
 
   display: flex;
 
   .post__content {
-    padding-left: 0.625rem;
+    padding-left: 0.625em;
     text-align: start;
 
     flex: 1;
@@ -87,7 +87,7 @@
   }
 
   .post__interactions {
-    margin-top: 0.625rem;
+    margin-top: 0.625em;
     gap: 80px;
 
     display: flex;
@@ -99,8 +99,8 @@
     display: flex;
 
     .post__interaction-count {
-      margin-left: 0.357rem;
-      font-size: 0.875em;
+      margin-left: 0.357em;
+      font-size: 0.875rem;
     }
 
     &.--like:hover {

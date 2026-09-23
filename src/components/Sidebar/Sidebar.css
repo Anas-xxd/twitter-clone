@@ -43,12 +43,12 @@
 
 /* --------- Sidebar User Info ---------- */
 .sidebar__user-info {
-  padding: 1.25rem;
+  padding: 1.25em;
 
   .sidebar__username {
     margin: 0;
     font-weight: 600;
-    font-size: 1.125em;
+    font-size: 1.125rem;
   }
 
   .sidebar__user-handle {
@@ -59,14 +59,14 @@
 
   .sidebar__follow-container {
     display: flex;
-    gap: 1.25rem;
+    gap: 1.25em;
   }
 
   .sidebar__follow-info {
     text-decoration: none;
 
     display: flex;
-    gap: 0.3125rem;
+    gap: 0.3125em;
 
     &:link {
       color: white;
@@ -82,7 +82,7 @@
 
     .sidebar__follow-title {
       color: gray;
-      font-size: 0.875em;
+      font-size: 0.875rem;
 
       align-self: center;
     }
@@ -96,11 +96,11 @@
   display: flex;
   flex-direction: column;
   flex: 1;
-  gap: 0.625rem;
+  gap: 0.625em;
 
   .sidebar__btn {
     width: 100%;
-    padding: 0.625rem 0 0.625rem 1.25rem;
+    padding: 0.625em 0 0.625em 1.25em;
 
     display: flex;
 
@@ -110,9 +110,9 @@
 
     .sidebar__btn-title {
       align-self: center;
-      margin-left: 1.111rem;
+      margin-left: 1.111em;
       font-weight: 600;
-      font-size: 1.125em;
+      font-size: 1.125rem;
     }
   }
 
