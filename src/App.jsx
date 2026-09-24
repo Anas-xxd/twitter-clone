@@ -3,6 +3,7 @@ import Main from "./components/Main/Main.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 import Sidebar from "./components/Sidebar/Sidebar.jsx";
 import { useEffect, useState } from "react";
+import DesktopSidebar from "./components/Sidebar/DesktopSidebar.jsx";
 
 export default function App() {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -20,9 +21,10 @@ export default function App() {
   return (
     <>
       <Header toggleSidebar={toggleSidebar} />
+      <Sidebar showSidebar={showSidebar} toggleSidebar={toggleSidebar} />
+      <DesktopSidebar />
       <Main />
       <Footer />
-      <Sidebar showSidebar={showSidebar} toggleSidebar={toggleSidebar} />
     </>
   );
 }

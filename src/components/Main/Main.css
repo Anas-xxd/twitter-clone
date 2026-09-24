@@ -1,3 +1,8 @@
+main {
+  max-width: 900px;
+  align-self: center;
+}
+
 .avatar-container {
   display: flexbox;
 }
@@ -84,6 +89,7 @@
 
   .post__media {
     width: 90%;
+    max-width: 600px;
   }
 
   .post__interactions {

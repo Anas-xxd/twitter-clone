@@ -6,15 +6,16 @@ header {
 
   position: fixed;
   top: 0;
-  left: 0;
+  left: 50%; /* Position top-left corner at screen center */
   width: 100%;
+  max-width: 900px;
   z-index: 10;
 
-  transform: translateY(0);
+  transform: translate(-50%, 0);
   transition: transform 0.3s ease-in-out;
 
   &.hidden {
-    transform: translateY(-100%);
+    transform: translate(-50%, -100%);
   }
 
   .header__container {
@@ -52,6 +53,7 @@ header {
 
   display: flex;
   justify-content: space-around;
+  width: 100%;
 
   .feed-tablist__btn {
     color: #71767b;
@@ -76,5 +78,31 @@ header {
     font-weight: bold;
     color: white;
     border-bottom: 2px solid #1d9bf0;
+  }
+}
+
+@media screen and (min-width: 501px) {
+  #root {
+    padding-top: 60px;
+  }
+
+  header {
+    z-index: 0;
+
+    .header__container {
+      display: none;
+    }
+
+    &.hidden {
+      transform: translate(-50%, 0);
+    }
+  }
+
+  .feed-tablist {
+    position: sticky;
+  }
+
+  .feed-tablist__btn {
+    padding: 15px 20px 0 20px;
   }
 }
