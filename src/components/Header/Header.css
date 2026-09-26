@@ -4,18 +4,16 @@ header {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 50%; /* Position top-left corner at screen center */
   width: 100%;
-  max-width: 900px;
   z-index: 10;
 
-  transform: translate(-50%, 0);
+  transform: translateY(0);
   transition: transform 0.3s ease-in-out;
 
   &.hidden {
-    transform: translate(-50%, -100%);
+    transform: translateY(-100%);
   }
 
   .header__container {
@@ -82,10 +80,6 @@ header {
 }
 
 @media screen and (min-width: 501px) {
-  #root {
-    padding-top: 60px;
-  }
-
   header {
     z-index: 0;
 
@@ -94,12 +88,8 @@ header {
     }
 
     &.hidden {
-      transform: translate(-50%, 0);
+      transform: translateY(0);
     }
-  }
-
-  .feed-tablist {
-    position: sticky;
   }
 
   .feed-tablist__btn {

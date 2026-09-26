@@ -1,5 +1,5 @@
 main {
-  max-width: 900px;
+  width: 100%;
   align-self: center;
 }
 
@@ -56,14 +56,11 @@ main {
 }
 
 /* --------- Feed ---------- */
-.feed {
-  padding: 0 0.625em;
-}
 
 /* --------- Post ---------- */
 .post {
   margin: 0.625em 0;
-  padding-bottom: 0.625em;
+  padding: 0 0.625em 0.625em 0.625em;
   border-bottom: 1px solid gray;
 
   display: flex;

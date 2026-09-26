@@ -45,14 +45,6 @@ body.no-scroll {
   overflow: hidden;
 }
 
-#root {
-  padding-top: 110px;
-
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-}
-
 .btn {
   background: none;
   border: none;
@@ -73,8 +65,57 @@ body.no-scroll {
   filter: brightness(70%);
 }
 
+.app-layout {
+  display: flex;
+  flex-direction: column;
+}
+
+.middle-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid gray;
+}
+
 @media screen and (min-width: 501px) {
-  #root {
-    flex-direction: row;
+  .middle-column {
+    padding-top: 0;
+  }
+
+  .app-layout {
+    display: grid;
+    grid-template-columns: 75px 1fr;
+  }
+
+  footer {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 601px) {
+  .app-layout {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+  }
+
+  footer {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1001px) {
+  .app-layout {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 0.5fr;
+  }
+
+  .left-column {
+    position: sticky;
+    display: flex;
+    justify-content: end;
+  }
+
+  footer {
+    display: none;
   }
 }

@@ -19,12 +19,21 @@ export default function App() {
   }, [showSidebar]);
 
   return (
-    <>
-      <Header toggleSidebar={toggleSidebar} />
-      <Sidebar showSidebar={showSidebar} toggleSidebar={toggleSidebar} />
-      <DesktopSidebar />
-      <Main />
+    <div className="app-layout">
+      <aside className="left-column">
+        <Sidebar showSidebar={showSidebar} toggleSidebar={toggleSidebar} />
+        <DesktopSidebar />
+      </aside>
+
+      <div className="middle-column">
+        <Header toggleSidebar={toggleSidebar} />
+
+        <Main />
+      </div>
+
+      <aside className="right-column"></aside>
+
       <Footer />
-    </>
+    </div>
   );
 }
