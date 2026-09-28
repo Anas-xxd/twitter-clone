@@ -84,7 +84,7 @@ body.no-scroll {
 
   .app-layout {
     display: grid;
-    grid-template-columns: 75px 1fr;
+    grid-template-columns: 75px 1fr 0.25fr;
   }
 
   footer {
@@ -93,17 +93,6 @@ body.no-scroll {
 }
 
 @media screen and (min-width: 601px) {
-  .app-layout {
-    display: grid;
-    grid-template-columns: 0.5fr 1fr;
-  }
-
-  footer {
-    display: none;
-  }
-}
-
-@media screen and (min-width: 1001px) {
   .app-layout {
     display: grid;
     grid-template-columns: 0.5fr 1fr 0.5fr;
