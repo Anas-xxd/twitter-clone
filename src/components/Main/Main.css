@@ -10,7 +10,7 @@ main {
 /* --------- Post Composer ---------- */
 .post-composer {
   padding: 0.625em;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid #2f3336;
 
   display: flex;
 }
@@ -33,7 +33,7 @@ main {
 
     &:focus {
       outline: none;
-      border-bottom: 1px solid gray;
+      border-bottom: 1px solid #2f3336;
     }
   }
 
@@ -61,7 +61,7 @@ main {
 .post {
   margin: 0.625em 0;
   padding: 0 0.625em 0.625em 0.625em;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid #2f3336;
 
   display: flex;
 

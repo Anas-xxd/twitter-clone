@@ -47,7 +47,7 @@ header {
 
 /* --------- Feed Tablist ---------- */
 .feed-tablist {
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid #2f3336;
 
   display: flex;
   justify-content: space-around;
