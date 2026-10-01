@@ -3,6 +3,7 @@
   background-color: #000;
   width: 70%;
   min-height: 100vh;
+  box-shadow: rgb(217, 217, 217, 0.2) 0px 1px 4px 1px;
 
   position: fixed;
   top: 0;
@@ -24,7 +25,7 @@
 
 /* --------- Sidebar Overlay ---------- */
 .sidebar-overlay {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(91, 122, 131, 0.4);
   opacity: 0;
   pointer-events: none;
 
@@ -45,6 +46,7 @@
   padding: 1.25em;
 
   .sidebar__username {
+    padding-top: 0.3125em;
     margin: 0;
     font-weight: 600;
     font-size: 1.125rem;
@@ -52,7 +54,7 @@
 
   .sidebar__user-handle {
     margin: 0;
-    color: gray;
+    color: #71767b;
     font-size: 0.875rem;
   }
 
@@ -80,7 +82,7 @@
     }
 
     .sidebar__follow-title {
-      color: gray;
+      color: #71767b;
       font-size: 0.875rem;
 
       align-self: center;

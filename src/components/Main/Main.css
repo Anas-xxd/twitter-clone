@@ -76,7 +76,7 @@ main {
     margin: 0;
 
     .post__meta {
-      color: gray;
+      color: #71767b;
     }
   }
 
@@ -97,7 +97,7 @@ main {
   }
 
   .post__interaction-btn {
-    color: gray;
+    color: #71767b;
     align-items: center;
     display: flex;
 
