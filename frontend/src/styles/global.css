@@ -1,0 +1,110 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  font-weight: 400;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #b8b8b8;
+  border-radius: 999px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
+
+html,
+body,
+#root {
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: white;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+.btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: white;
+
+  align-self: center;
+}
+
+.avatar {
+  width: 40px;
+  align-self: flex-start;
+  transition: filter 0.2s ease;
+}
+
+.avatar:hover {
+  filter: brightness(70%);
+}
+
+.app-layout {
+  display: flex;
+  flex-direction: column;
+}
+
+.middle-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid #2f3336;
+}
+
+@media screen and (min-width: 501px) {
+  .middle-column {
+    padding-top: 0;
+  }
+
+  .app-layout {
+    display: grid;
+    grid-template-columns: 75px 1fr 0.25fr;
+  }
+
+  footer {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 601px) {
+  .app-layout {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 0.5fr;
+  }
+
+  .left-column {
+    position: sticky;
+    display: flex;
+    justify-content: end;
+  }
+
+  footer {
+    display: none;
+  }
+}

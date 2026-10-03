@@ -1,0 +1,109 @@
+[
+  {
+    "userInfo": {
+      "userId": 1,
+      "name": "Anas Baroudi",
+      "username": "Anas_xxd",
+      "avatar": "/avatar.svg"
+    },
+    "postInfo": {
+      "postId": 1,
+      "content": "I want to sleep",
+      "createdAt": "2026-09-16T12:00:00Z",
+      "postInteractions": {
+        "likesNum": 0,
+        "isLiked": false,
+        "repostNum": 0,
+        "isReposted": false,
+        "commentsNum": 0,
+        "commentsList": []
+      }
+    }
+  },
+  {
+    "userInfo": {
+      "userId": 2,
+      "name": "Haruto Nakamura",
+      "username": "haruto",
+      "avatar": "/avatar.svg"
+    },
+    "postInfo": {
+      "postId": 2,
+      "content": "I don't know what to write",
+      "createdAt": "2023-09-16T12:00:00Z",
+      "postInteractions": {
+        "likesNum": 2,
+        "isLiked": false,
+        "repostNum": 0,
+        "isReposted": false,
+        "commentsNum": 2,
+        "commentsList": []
+      }
+    }
+  },
+  {
+    "userInfo": {
+      "userId": 3,
+      "name": "Haruka",
+      "username": "Haruka",
+      "avatar": "/avatar.svg"
+    },
+    "postInfo": {
+      "postId": 3,
+      "content": "I am going to study",
+      "img": "/content-placeholder.png",
+      "createdAt": "2026-09-15T12:00:00Z",
+      "postInteractions": {
+        "likesNum": 52,
+        "isLiked": false,
+        "repostNum": 8,
+        "isReposted": false,
+        "commentsNum": 21,
+        "commentsList": []
+      }
+    }
+  },
+  {
+    "userInfo": {
+      "userId": 4,
+      "name": "Sayori",
+      "username": "Sayori",
+      "avatar": "/avatar.svg"
+    },
+    "postInfo": {
+      "postId": 4,
+      "content": "The bakery is doing good",
+      "img": "/content-placeholder.png",
+      "createdAt": "2026-09-16T12:00:00Z",
+      "postInteractions": {
+        "likesNum": 18,
+        "isLiked": false,
+        "repostNum": 3,
+        "isReposted": false,
+        "commentsNum": 8,
+        "commentsList": []
+      }
+    }
+  },
+  {
+    "userInfo": {
+      "userId": 2,
+      "name": "Haruto Nakamura",
+      "username": "haruto",
+      "avatar": "/avatar.svg"
+    },
+    "postInfo": {
+      "postId": 5,
+      "content": "I am going to bake some cup cakes",
+      "createdAt": "2026-09-16T12:00:00Z",
+      "postInteractions": {
+        "likesNum": 8,
+        "isLiked": false,
+        "repostNum": 2,
+        "isReposted": false,
+        "commentsNum": 8,
+        "commentsList": []
+      }
+    }
+  }
+]
