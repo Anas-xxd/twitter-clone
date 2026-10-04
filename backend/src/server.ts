@@ -1,7 +1,12 @@
 import express from "express";
+import { getFeed } from "./controllers/feedController"
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+app.get("/api/feed", (req, res) => {
+    res.json(getFeed())
+});
 
 app.get("/api/health", (req, res) => {
     res.json({ message: "Server is running!" });
@@ -9,4 +14,4 @@ app.get("/api/health", (req, res) => {
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
-})
+});
