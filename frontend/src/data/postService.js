@@ -1,6 +1,6 @@
 export default async function getPosts() {
   try {
-    const response = await fetch("/data.json");
+    const response = await fetch("/api/feed");
 
     if (!response.ok) {
       throw new Error("Failed to fetch posts");
