@@ -1,6 +1,17 @@
 import { pool } from "./database";
-import type { PoolClient } from "pg";
 import seedData from "./seedData.json";
+
+import type { PoolClient } from "pg";
+import type {
+  SeedUser,
+  SeedPost,
+  SeedFollow,
+  SeedLike,
+  SeedRepost,
+  SeedInterest,
+  SeedUserInterests,
+  SeedPostInterests,
+} from "../types/seed.typs";
 
 const usersIds = new Map<number, number>();
 const postsIds = new Map<number, number>();
@@ -25,68 +36,6 @@ function getMappedId(
 
   return id;
 }
-
-type SeedUser = {
-  id: number;
-  username: string;
-  first_name: string;
-  last_name: string;
-  bio: string | null;
-  birthdate: string;
-  avatar_url: string | null;
-  banner_url: string | null;
-  email: string;
-  phone_number: string;
-  password_hash: string;
-};
-
-type SeedPost = {
-  id: number;
-  user_id: number;
-  text_content: string;
-  media_url: string | null;
-  created_at: string;
-  likes_count: number;
-  reposts_count: number;
-  comments_count: number;
-};
-
-type SeedFollow = {
-  follower_id: number;
-  following_id: number;
-  created_at: string;
-};
-
-type SeedLike = {
-  user_id: number;
-  post_id: number;
-  created_at: string;
-};
-
-type SeedRepost = {
-  user_id: number;
-  post_id: number;
-  created_at: string;
-};
-
-type SeedInterest = {
-  id: number;
-  name: string;
-  description: string;
-  created_at: string;
-};
-
-type SeedUserInterests = {
-  user_id: number;
-  interest_id: number;
-  created_at: string;
-};
-
-type SeedPostInterests = {
-  post_id: number;
-  interest_id: number;
-  created_at: string;
-};
 
 const users: SeedUser[] = seedData.users;
 const posts: SeedPost[] = seedData.posts;
