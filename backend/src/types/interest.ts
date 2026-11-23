@@ -1,5 +1,5 @@
 export type InterestRow = {
-  id: number;
+  id: string;
   name: string;
   description: string;
   created_at: string;
@@ -11,8 +11,8 @@ export type CreateInterestInput = Pick<InterestRow, "name" | "description">;
 export type UpdateInterestInput = Pick<InterestRow, "description">;
 
 export type UserInterestRow = {
-  user_id: number;
-  interest_id: number;
+  user_id: string;
+  interest_id: string;
   created_at: Date;
 };
 
@@ -22,8 +22,8 @@ export type CreateUserInterestInput = Pick<
 >;
 
 export type PostInterestRow = {
-  post_id: number;
-  interest_id: number;
+  post_id: string;
+  interest_id: string;
   created_at: Date;
 };
 
