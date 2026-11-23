@@ -3,29 +3,26 @@ import { useState } from "react";
 import { formatPostDate } from "../../utils/formatPostDate";
 
 export default function Post({ postData }) {
-  const [liked, setLiked] = useState(false);
-  const [reposted, setReposted] = useState(false);
+  const { author, post } = postData;
+  const { authorId, username, firstName, lastName, avatarUrl } = author;
+  const { postId, textContent, mediaUrl, createdAt, engagement } = post;
+  const { likesCount, repostsCount, commentsCount, isLiked, isReposted } =
+    engagement;
 
-  const { userInfo, postInfo } = postData;
-  const { userId, name, username, avatar } = userInfo;
-  const { postId, content, img, createdAt, postInteractions } = postInfo;
-  const {
-    likesNum,
-    isLiked,
-    repostNum,
-    isReposted,
-    commentsNum,
-    commentsList,
-  } = postInteractions;
+  const [liked, setLiked] = useState(isLiked);
+  const [reposted, setReposted] = useState(isReposted);
+
+  const [likes, setLikes] = useState(likesCount);
+  const [reposts, setReposts] = useState(repostsCount);
 
   const likeClicked = () => {
-    setLiked(!liked);
-    liked ? postInteractions.likesNum-- : postInteractions.likesNum++;
+    setLiked((previous) => !previous);
+    setLikes(liked ? likes - 1 : likes + 1);
   };
 
   const repostClicked = () => {
-    setReposted(!reposted);
-    reposted ? postInteractions.repostNum-- : postInteractions.repostNum++;
+    setReposted((previous) => !previous);
+    setReposts(reposted ? reposts - 1 : reposts + 1);
   };
 
   const replyClicked = () => {
@@ -36,21 +33,27 @@ export default function Post({ postData }) {
     <article className="post">
       <div className="avatar-container">
         <a href="" className="btn account-btn">
-          <img className="avatar" src={avatar} alt="Avatar" />
+          <img
+            className="avatar"
+            src={avatarUrl || "/avatar.svg"}
+            alt="Avatar"
+          />
         </a>
       </div>
 
       <div className="post__content">
         <p className="post__user-info">
-          {name + " "}
+          {`${firstName} ${lastName} `}
           <span className="post__meta">
             @{username} . {formatPostDate(createdAt)}
           </span>
         </p>
 
-        <p className="post__text">{content}</p>
+        <p className="post__text">{textContent}</p>
 
-        {img && <img className="post__media" src={img} alt="Image Post" />}
+        {mediaUrl && (
+          <img className="post__media" src={mediaUrl} alt="Image Post" />
+        )}
 
         <div className="post__interactions">
           <button
@@ -59,7 +62,7 @@ export default function Post({ postData }) {
             onClick={replyClicked}
           >
             <MessageCircle />
-            <span className="post__interaction-count">{commentsNum}</span>
+            <span className="post__interaction-count">{commentsCount}</span>
           </button>
 
           <button
@@ -68,7 +71,7 @@ export default function Post({ postData }) {
             onClick={repostClicked}
           >
             <Repeat2 color={reposted ? "#00ab7c" : "currentColor"} />
-            <span className="post__interaction-count">{repostNum}</span>
+            <span className="post__interaction-count">{reposts}</span>
           </button>
 
           <button
@@ -80,7 +83,7 @@ export default function Post({ postData }) {
               color={liked ? "#f91880" : "currentColor"}
               fill={liked ? "#f91880" : "none"}
             />
-            <span className="post__interaction-count">{likesNum}</span>
+            <span className="post__interaction-count">{likes}</span>
           </button>
         </div>
       </div>
