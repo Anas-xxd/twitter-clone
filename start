@@ -2,16 +2,59 @@
 
 set -e
 
+BACKEND_PID=""
+FRONTEND_PID=""
+POSTGRES_STARTED=false
+
+cleanup() {
+    echo ""
+    echo "Stopping development environment..."
+
+    # Stop frontend and its child processes
+    if [[ -n "$FRONTEND_PID" ]]; then
+        kill -TERM -- "-$FRONTEND_PID" 2>/dev/null || true
+        wait "$FRONTEND_PID" 2>/dev/null || true
+    fi
+
+    # Stop backend and its child processes
+    if [[ -n "$BACKEND_PID" ]]; then
+        kill -TERM -- "-$BACKEND_PID" 2>/dev/null || true
+        wait "$BACKEND_PID" 2>/dev/null || true
+    fi
+
+    # Stop PostgreSQL
+    if [[ "$POSTGRES_STARTED" == true ]]; then
+        sudo systemctl stop postgresql
+    fi
+
+    echo "Development environment stopped."
+}
+
+trap cleanup EXIT
+trap 'exit 130' INT
+trap 'exit 143' TERM
+
 cd /mnt/LinuxStorage/mywork/twitter-clone/
 
+echo "Starting PostgreSQL..."
+sudo systemctl start postgresql
+POSTGRES_STARTED=true
+
 cd backend
+
 echo "Building the TS program..."
 npm run build
 echo "Building complete."
 
 echo "Starting the backend server..."
-npm run start &
+setsid npm run start &
+BACKEND_PID=$!
 
 cd ../frontend
+
 echo "Starting the frontend..."
-npm run dev 
+setsid npm run dev &
+FRONTEND_PID=$!
+
+# Keep the script running while the frontend is running
+wait "$FRONTEND_PID"
