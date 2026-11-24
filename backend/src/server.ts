@@ -1,39 +1,10 @@
-import express from "express";
-import feedRouter from "./routes/feedRouter";
+import app from "./app";
 import {
   testDatabaseConnection,
   closeDatabaseConnection,
-  pool,
 } from "./database/database";
 
-const app = express();
 const PORT = process.env.PORT || 3000;
-
-app.use(express.json());
-
-app.use("/api/feed", feedRouter);
-
-app.get("/api/health", (req, res) => {
-  res.json({ message: "Server is running!" });
-});
-
-app.get("/api/ready", async (req, res) => {
-  try {
-    await pool.query("SELECT 1");
-
-    res.status(200).json({
-      status: "healthy",
-      database: "connected",
-    });
-  } catch (error) {
-    console.error("Database health check failed:", error);
-
-    res.status(503).json({
-      status: "unhealthy",
-      database: "disconnected",
-    });
-  }
-});
 
 async function startServer() {
   try {
