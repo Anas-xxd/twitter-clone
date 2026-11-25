@@ -10,23 +10,24 @@ export default function PostComposer({ setPosts }) {
     }
     setPosts((prevPosts) => [
       {
-        userInfo: {
-          userId: 1,
-          name: "Anas Baroudi",
+        author: {
+          authorId: 1,
           username: "Anas_xxd",
-          avatar: "/avatar.svg",
+          firstName: "Anas",
+          lastName: "Baroudi",
+          avatarUrl: "/avatar.svg",
         },
-        postInfo: {
+        post: {
           postId: Date.now(),
-          content: postText,
+          textContent: postText,
+          mediaUrl: "",
           createdAt: new Date().toISOString(),
-          postInteractions: {
-            likesNum: 0,
+          engagement: {
+            likesCount: 0,
+            repostCount: 0,
+            commentsCount: 0,
             isLiked: false,
-            repostNum: 0,
             isReposted: false,
-            commentsNum: 0,
-            commentsList: [],
           },
         },
       },

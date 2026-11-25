@@ -11,7 +11,8 @@ import {
   Search,
   Bell,
 } from "lucide-react";
-
+//The visible text Home already provides the
+// link's accessible name aria-label is redundant
 export default function DesktopSidebar() {
   return (
     <div className={`sidebar desktop-sidebar`}>
@@ -56,7 +57,7 @@ export default function DesktopSidebar() {
         <a
           href=""
           className="btn sidebar__btn"
-          aria-label="direct-message-page-button"
+          aria-label="profile-page-button"
         >
           <UserRound />
           <div className="sidebar__btn-title">Profile</div>
@@ -65,17 +66,13 @@ export default function DesktopSidebar() {
         <a
           href=""
           className="btn sidebar__btn"
-          aria-label="direct-message-page-button"
+          aria-label="follows-page-button"
         >
           <UserRoundPlus />
           <div className="sidebar__btn-title">Follow</div>
         </a>
 
-        <a
-          href=""
-          className="btn sidebar__btn"
-          aria-label="direct-message-page-button"
-        >
+        <a href="" className="btn sidebar__btn" aria-label="liked-page-button">
           <Heart />
           <div className="sidebar__btn-title">Liked Posts</div>
         </a>
@@ -83,7 +80,7 @@ export default function DesktopSidebar() {
         <a
           href=""
           className="btn sidebar__btn"
-          aria-label="direct-message-page-button"
+          aria-label="comments-page-button"
         >
           <MessageCircle />
           <div className="sidebar__btn-title">Comments</div>
@@ -92,16 +89,13 @@ export default function DesktopSidebar() {
         <a
           href=""
           className="btn sidebar__btn"
-          aria-label="direct-message-page-button"
+          aria-label="settings-page-button"
         >
           <Settings />
           <div className="sidebar__btn-title">Settings</div>
         </a>
 
-        <button
-          className="btn sidebar__btn"
-          aria-label="direct-message-page-button"
-        >
+        <button className="btn sidebar__btn" aria-label="logout-button">
           <LogOut />
           <div className="sidebar__btn-title">Log out</div>
         </button>

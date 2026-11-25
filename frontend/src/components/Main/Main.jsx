@@ -7,12 +7,18 @@ import { useState, useEffect } from "react";
 export default function Main() {
   const [posts, setPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const postsData = await getPosts();
-      setPosts(postsData);
-      setIsLoading(false);
+      try {
+        const postsData = await getPosts();
+        setPosts(postsData);
+      } catch {
+        setError("Failed to load posts. Please try again.");
+      } finally {
+        setIsLoading(false);
+      }
     };
 
     fetchPosts();
@@ -20,6 +26,10 @@ export default function Main() {
 
   if (isLoading) {
     return <div className="loading">Loading...</div>;
+  }
+
+  if (error) {
+    return <div role="alert">{error}</div>;
   }
 
   return (

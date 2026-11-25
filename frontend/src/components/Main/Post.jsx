@@ -8,7 +8,8 @@ export default function Post({ postData }) {
   const { postId, textContent, mediaUrl, createdAt, engagement } = post;
   const { likesCount, repostsCount, commentsCount, isLiked, isReposted } =
     engagement;
-
+  //if the parent later passes updated engagement values for the
+  //same post, the local state won't automatically synchronize
   const [liked, setLiked] = useState(isLiked);
   const [reposted, setReposted] = useState(isReposted);
 
