@@ -10,6 +10,11 @@ export type CreateInterestInput = Pick<InterestRow, "name" | "description">;
 
 export type UpdateInterestInput = Pick<InterestRow, "description">;
 
+export type InterestPublicResponse = Omit<
+  InterestRow,
+  "created_at" | "updated_at"
+>;
+
 export type UserInterestRow = {
   user_id: string;
   interest_id: string;
