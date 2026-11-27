@@ -1,5 +1,5 @@
 export type UserRow = {
-  id: number;
+  id: string;
   username: string;
   first_name: string;
   last_name: string;
@@ -7,6 +7,8 @@ export type UserRow = {
   birthdate: string;
   avatar_url: string | null;
   banner_url: string | null;
+  followers_count: string;
+  following_count: string;
   email: string;
   email_verified_at: Date | null;
   phone_number: string | null;
@@ -42,6 +44,20 @@ export type UpdateUserInput = Partial<
     | "email"
     | "phone_number"
   >
+>;
+
+export type UserPublicResponse = Pick<
+  UserRow,
+  | "username"
+  | "first_name"
+  | "last_name"
+  | "bio"
+  | "birthdate"
+  | "avatar_url"
+  | "banner_url"
+  | "followers_count"
+  | "following_count"
+  | "created_at"
 >;
 
 export type UserResponse = Omit<UserRow, "password_hash">;
