@@ -1,7 +1,7 @@
-import { Request, Response } from "express";
 import { pool } from "../database/database";
 import { mapResponse } from "../mappers/postMapper";
 
+import type { Request, Response } from "express";
 import type { PostResponse, PostFeedRow } from "../types/post";
 
 export async function getFeed(req: Request, res: Response) {
