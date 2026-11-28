@@ -5,8 +5,8 @@ import type { Request, Response } from "express";
 import type { PostResponse, PostFeedRow } from "../types/post";
 
 export async function getFeed(req: Request, res: Response) {
-  const followingFeed: PostFeedRow[] = await getForYouFeed("1");
-  const response: PostResponse[] = mapResponse(followingFeed);
+  const forYouFeed: PostFeedRow[] = await getForYouFeed("1");
+  const response: PostResponse[] = mapResponse(forYouFeed);
   return res.json(response);
 }
 

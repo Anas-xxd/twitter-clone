@@ -10,8 +10,16 @@ export async function getInterests(req: Request, res: Response) {
 }
 
 export async function getInterestsById(req: Request, res: Response) {
-  const interests: InterestPublicResponse =
-    await getPublicInterestsResponseById("1");
+  const id = req.params.id;
+
+  if (typeof id !== "string") {
+    return res.status(400).json({
+      error: { message: "Invalid interest ID" },
+    });
+  }
+
+  const interests = await getPublicInterestsResponseById(id);
+
   return res.json(interests);
 }
 

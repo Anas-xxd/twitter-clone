@@ -10,7 +10,11 @@ export default function Header({ toggleSidebar }) {
   return (
     <header className={isVisible ? "" : "hidden"}>
       <div className="header__container">
-        <button className="btn header__menu-btn" onClick={toggleSidebar}>
+        <button
+          className="btn header__menu-btn"
+          onClick={toggleSidebar}
+          aria-label="open sidebar"
+        >
           <Menu />
         </button>
 

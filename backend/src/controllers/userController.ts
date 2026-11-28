@@ -4,7 +4,16 @@ import type { Request, Response } from "express";
 import type { UserResponse, UserPublicResponse } from "../types/user";
 
 export async function getUserById(req: Request, res: Response) {
-  const user: UserPublicResponse = await getUserPublicResponse("1");
+  const id = req.params.id;
+
+  if (typeof id !== "string") {
+    return res.status(400).json({
+      error: { message: "Invalid user ID" },
+    });
+  }
+
+  const user: UserPublicResponse = await getUserPublicResponse(id);
+
   return res.json(user);
 }
 
